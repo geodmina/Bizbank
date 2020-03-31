@@ -1,0 +1,12 @@
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/bin/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.deps.json
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/bin/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.dll
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/bin/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.pdb
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/bin/Release/netcoreapp3.1/BIZBANK.V2020.CAD.ORACLE.dll
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/bin/Release/netcoreapp3.1/Oracle.ManagedDataAccess.dll
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/bin/Release/netcoreapp3.1/BIZBANK.V2020.CAD.ORACLE.pdb
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/obj/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.csprojAssemblyReference.cache
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/obj/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.AssemblyInfoInputs.cache
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/obj/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.AssemblyInfo.cs
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/obj/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.csproj.CopyComplete
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/obj/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.dll
+/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.DBMS/BIZBANK.V2020.CAD.DBMS/obj/Release/netcoreapp3.1/BIZBANK.V2020.CAD.DBMS.pdb

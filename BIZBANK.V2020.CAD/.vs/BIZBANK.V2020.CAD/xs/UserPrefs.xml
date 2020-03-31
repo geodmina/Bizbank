@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="Varios proyectos">
+  <MonoDevelop.Ide.ItemProperties.BIZBANK.V2020.CAD.GENERAL PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BIZBANK.V2020.CAD" expanded="True">
+            <Node name="BIZBANK.V2020.CAD.ADMINISTRACION" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ServicioController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BIZBANK.V2020.CAD.ADMINISTRACION PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Varios proyectos" Name="Varios proyectos">
+      <Items>
+        <StartupItem ItemId="{156C4C5D-FC0B-460B-9CAA-B2A7A3893BCB}" ItemName="BIZBANK.V2020.CAD.ADMINISTRACION" ConfigurationId="Default" />
+        <StartupItem ItemId="{0D4EDEEE-DAB8-4DF1-8DEB-71782814B24D}" ItemName="BIZBANK.V2020.CAD.GENERAL" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+</Properties>

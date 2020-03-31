@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BIZBANK.V2020.CIU.ADMINISTRACION", "BIZBANK.V2020.CIU.ADMINISTRACION\BIZBANK.V2020.CIU.ADMINISTRACION.csproj", "{00001E9B-DFAB-4C3B-AAF3-E19CCC832CED}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BIZBANK.V2020.CIU.GENERAL", "BIZBANK.V2020.CIU.GENERAL\BIZBANK.V2020.CIU.GENERAL.csproj", "{085851FA-A1E6-41E5-B1DC-5DE72A25F6ED}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00001E9B-DFAB-4C3B-AAF3-E19CCC832CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00001E9B-DFAB-4C3B-AAF3-E19CCC832CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00001E9B-DFAB-4C3B-AAF3-E19CCC832CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00001E9B-DFAB-4C3B-AAF3-E19CCC832CED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{085851FA-A1E6-41E5-B1DC-5DE72A25F6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{085851FA-A1E6-41E5-B1DC-5DE72A25F6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{085851FA-A1E6-41E5-B1DC-5DE72A25F6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{085851FA-A1E6-41E5-B1DC-5DE72A25F6ED}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DE757348-51F1-4025-8592-021D9741D7D5}
+	EndGlobalSection
+EndGlobal

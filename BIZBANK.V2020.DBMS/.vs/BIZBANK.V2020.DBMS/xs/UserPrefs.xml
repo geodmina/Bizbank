@@ -1,0 +1,27 @@
+﻿<Properties StartupConfiguration="{DF94FF4A-B6C0-4E6B-8632-34CAE591BA09}|Default">
+  <MonoDevelop.Ide.ItemProperties.TestConsola PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="BIZBANK.V2020.CAD.DBMS/DBMS.cs">
+    <Files>
+      <File FileName="TestConsola/Program.cs" Line="20" Column="46" />
+      <File FileName="BIZBANK.V2020.CAD.DBMS/DBMS.cs" Line="289" Column="21" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BIZBANK.V2020.DBMS" expanded="True">
+            <Node name="BIZBANK.V2020.CAD.DBMS" expanded="True">
+              <Node name="DBMS.cs" selected="True" />
+            </Node>
+            <Node name="TestConsola" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>

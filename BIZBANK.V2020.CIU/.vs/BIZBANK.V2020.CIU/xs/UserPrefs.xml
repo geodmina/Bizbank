@@ -1,0 +1,32 @@
+﻿<Properties StartupConfiguration="Varios proyectos">
+  <MonoDevelop.Ide.ItemProperties.BIZBANK.V2020.CIU.GENERAL PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.Workbench>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="BIZBANK.V2020.CIU" expanded="True">
+            <Node name="BIZBANK.V2020.CIU.ADMINISTRACION" expanded="True">
+              <Node name="Controllers" expanded="True">
+                <Node name="ServicioController.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.BIZBANK.V2020.CIU.ADMINISTRACION PreferredExecutionTarget="/Applications/Google Chrome.app" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations>
+    <MultiItemSolutionRunConfiguration Id="Varios proyectos" Name="Varios proyectos">
+      <Items>
+        <StartupItem ItemId="{00001E9B-DFAB-4C3B-AAF3-E19CCC832CED}" ItemName="BIZBANK.V2020.CIU.ADMINISTRACION" ConfigurationId="Default" />
+        <StartupItem ItemId="{085851FA-A1E6-41E5-B1DC-5DE72A25F6ED}" ItemName="BIZBANK.V2020.CIU.GENERAL" ConfigurationId="Default" />
+      </Items>
+    </MultiItemSolutionRunConfiguration>
+  </MultiItemStartupConfigurations>
+</Properties>
