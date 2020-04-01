@@ -14,22 +14,22 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmpProdServTranFactoryController : ControllerBase
+    public class RolUsuarioFactoryController : ControllerBase
     {
 
         private readonly IConfiguration configuracion;
-        const string c_rutaAPI = "/api/EmpProdServTranFactory/";
+        const string c_rutaAPI = "/api/RolUsuarioFactory/";
         private string segmentoCodigo = string.Empty;
         private readonly string c_rutaClase = "BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.ADMINISTRACION/Controllers/";
-        private readonly string c_claseNombre = "EmpProdServTranFactoryController";
+        private readonly string c_claseNombre = "RolUsuarioFactoryController";
 
-        public EmpProdServTranFactoryController(IConfiguration configuracion)
+        public RolUsuarioFactoryController(IConfiguration configuracion)
         {
             this.configuracion = configuracion;
         }
 
         /// <summary>
-        /// CONSULTAR SERVICIOS
+        /// CONSULTAR ROLES POR USUARIOS
         /// </summary>
         /// <param name="cabUsuario"> CODIGO DEL USUARIO </param>
         /// <param name="cabLoginId"> CODIGO DE LA SESION </param>
@@ -39,13 +39,16 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         /// <param name="cabEstacion"> ESTACION DEL USUARIO </param>
         /// <param name="codBanco"> CODIGO DEL BANCO </param>
         /// <param name="codEmpresa"> CODIGO DE LA EMPRESA </param>
+        /// <param name="codProducto"> CODIGO DE LA PRODUCTO </param>
+        /// <param name="codServicio"> CODIGO DE SERVICIO </param>
+        /// <param name="usuario"> USUARIO </param>
         /// <param name="idTransaccion"> ID DE LA TRANSACCION </param>
         /// <param name="permiso"> PERMISO DE EJECUCIÓN </param>
         /// <param name="parServicio"> SERVICIO PARA VERIFICAR PERMISO DE EJECUCIÓ </param>
         /// <returns></returns>
         [HttpGet]
-        [Route("ConsultaServiciosEmpresaProducto")]
-        public ActionResult ConsultaServiciosEmpresaProducto(
+        [Route("CargaPerfilPorUsuario")]
+        public ActionResult CargaPerfilPorUsuario(
             [FromHeader(Name = "cabUsuario")] string cabUsuario,
             [FromHeader(Name = "cabLoginId")] int cabLoginId,
             [FromHeader(Name = "cabCompania")] int cabCompania,
@@ -53,15 +56,17 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
             [FromHeader(Name = "cabTipoUsuario")] string cabTipoUsuario,
             [FromHeader(Name = "cabEstacion")] string cabEstacion,
             [FromQuery(Name = "codBanco")] int codBanco,
-            [FromQuery(Name = "codEmpresa")] string codEmpresa,
+            [FromQuery(Name = "codEmpresa")] int codEmpresa,
             [FromQuery(Name = "codProducto")] int codProducto,
+            [FromQuery(Name = "codServicio")] string codServicio,
+            [FromQuery(Name = "usuario")] string usuario,
             [FromQuery(Name = "idTransaccion")] string idTransaccion,
             [FromQuery(Name = "permiso")] string permiso,
             [FromQuery(Name = "parServicio")] string parServicio
         )
         {
 
-            const string c_metodoNombre = "ConsultaServiciosEmpresaProducto";
+            const string c_metodoNombre = "CargaPerfilPorUsuario";
             using (var cliente = new HttpClient())
             {
                 try
@@ -83,10 +88,10 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     // ARMAR LA RUTA DEL SERVICIO A CONSUMIR.
                     segmentoCodigo = "BLOQUE 20";
                     string url = string.Empty;
-                    url = string.Format("{0}{1}?codBanco={2}&codEmpresa={3}&codProducto={4}&idTransaccion={5}" +
-                        "&permiso={6}&parServicio={7}",
-                        c_rutaAPI, c_metodoNombre, codBanco, codEmpresa, codProducto, idTransaccion,
-                        permiso, parServicio);
+                    url = string.Format("{0}{1}?codBanco={2}&codEmpresa={3}&codProducto={4}&codServicio={5}" +
+                        "&idTransaccion={6}&permiso={7}&parServicio={8}&usuario={9}",
+                        c_rutaAPI, c_metodoNombre, codBanco, codEmpresa, codProducto, codServicio,
+                        idTransaccion, permiso, parServicio, usuario);
 
                     // EJECUTAR LA PETICION AL SERVICIO CAD DE CONSULTA DE ORDENES MEDIANTE
                     // METODO GET.

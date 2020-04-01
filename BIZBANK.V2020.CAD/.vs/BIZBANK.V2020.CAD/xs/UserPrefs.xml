@@ -1,8 +1,9 @@
 ﻿<Properties StartupConfiguration="Varios proyectos">
   <MonoDevelop.Ide.ItemProperties.BIZBANK.V2020.CAD.GENERAL PreferredExecutionTarget="/Applications/Google Chrome.app" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="BIZBANK.V2020.CAD.ADMINISTRACION/Controllers/RolFactoryController.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="BIZBANK.V2020.CAD.ADMINISTRACION/Controllers/RolUsuarioFactoryController.cs">
     <Files>
-      <File FileName="BIZBANK.V2020.CAD.ADMINISTRACION/Controllers/RolFactoryController.cs" Line="362" Column="49" />
+      <File FileName="BIZBANK.V2020.CAD.ADMINISTRACION/Controllers/RolFactoryController.cs" Line="444" Column="18" />
+      <File FileName="BIZBANK.V2020.CAD.ADMINISTRACION/Controllers/RolUsuarioFactoryController.cs" Line="10" Column="2" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -10,7 +11,7 @@
           <Node name="BIZBANK.V2020.CAD" expanded="True">
             <Node name="BIZBANK.V2020.CAD.ADMINISTRACION" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="RolFactoryController.cs" selected="True" />
+                <Node name="RolUsuarioFactoryController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
