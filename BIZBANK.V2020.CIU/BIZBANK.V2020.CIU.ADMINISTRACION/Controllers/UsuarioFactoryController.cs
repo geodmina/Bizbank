@@ -110,6 +110,8 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                 }
                 catch (Exception errorInformacion)
                 {
+
+                    // RETORNAR UN OBJETO DE ERROR CON EL CODIGO HTTP 400 EN CASO DE ERROR 
                     var jsonError = new
                     {
                         error = true,
@@ -117,6 +119,7 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     };
 
                     return BadRequest(jsonError);
+
                 }
             }
 
@@ -539,6 +542,8 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                 }
                 catch (Exception errorInformacion)
                 {
+
+                    // RETORNAR UN OBJETO DE ERROR CON EL CODIGO HTTP 400 EN CASO DE ERROR 
                     var jsonError = new
                     {
                         error = true,
@@ -546,6 +551,7 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     };
 
                     return BadRequest(jsonError);
+
                 }
             }
 

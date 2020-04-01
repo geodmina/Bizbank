@@ -4,33 +4,31 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
 
-// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
 {
-
     [Route("api/[controller]")]
     [ApiController]
-    public class EmpresaFactoryController : ControllerBase
+    public class EmpresaProServFactoryController : ControllerBase
     {
 
         private readonly IConfiguration configuracion;
-        const string c_rutaAPI = "/api/EmpresaFactory/";
+        const string c_rutaAPI = "/api/EmpresaProServFactory/";
         private string segmentoCodigo = string.Empty;
         private readonly string c_rutaClase = "BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.ADMINISTRACION/Controllers/";
-        private readonly string c_claseNombre = "EmpresaFactoryController";
+        private readonly string c_claseNombre = "EmpresaProServFactoryController";
 
-        public EmpresaFactoryController(IConfiguration configuracion)
+        public EmpresaProServFactoryController(IConfiguration configuracion)
         {
             this.configuracion = configuracion;
         }
 
         /// <summary>
-        /// CONSULTAR USUARIO
+        /// CONSULTAR PRODUCTOS
         /// </summary>
         /// <param name="cabUsuario"> CODIGO DEL USUARIO </param>
         /// <param name="cabLoginId"> CODIGO DE LA SESION </param>
@@ -38,34 +36,28 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         /// <param name="cabBanco"> CODIGO DEL BANCO </param>
         /// <param name="cabTipoUsuario"> TIPO DE USUARIO QUE REALIZA LA PETICION </param>
         /// <param name="cabEstacion"> ESTACION DEL USUARIO </param>
-        /// <param name="tipoNuc"> CODIGO DE USUARIO </param>
-        /// <param name="tipoCliente"> CODIGO DE LA OPCION </param>
-        /// <param name="criterioEmpresa"> TIPO DE CLIENTE </param>
-        /// <param name="codBanco"> CODIGO DEL BANCO </param>
+        /// <param name="estado"> ESTADO DEL PRODUCTO </param>
         /// <param name="idTransaccion"> ID DE LA TRANSACCION </param>
         /// <param name="permiso"> PERMISO DE EJECUCIÓN </param>
         /// <param name="parServicio"> SERVICIO PARA VERIFICAR PERMISO DE EJECUCIÓ </param>
         /// <returns></returns>
         [HttpGet]
-        [Route("ConsultaComerciosLocal")]
-        public ActionResult ConsultaComerciosLocal(
+        [Route("ConsultarProducto")]
+        public ActionResult ConsultarProducto(
             [FromHeader(Name = "cabUsuario")] string cabUsuario,
             [FromHeader(Name = "cabLoginId")] int cabLoginId,
             [FromHeader(Name = "cabCompania")] int cabCompania,
             [FromHeader(Name = "cabBanco")] int cabBanco,
             [FromHeader(Name = "cabTipoUsuario")] string cabTipoUsuario,
             [FromHeader(Name = "cabEstacion")] string cabEstacion,
-            [FromQuery(Name = "tipoNuc")] string tipoNuc,
-            [FromQuery(Name = "tipoCliente")] string tipoCliente,
-            [FromQuery(Name = "criterioEmpresa")] string criterioEmpresa,
-            [FromQuery(Name = "codBanco")] int codBanco,
+            [FromQuery(Name = "estado")] string estado,
             [FromQuery(Name = "idTransaccion")] string idTransaccion,
             [FromQuery(Name = "permiso")] string permiso,
             [FromQuery(Name = "parServicio")] string parServicio
         )
         {
 
-            const string c_metodoNombre = "ConsultaComerciosLocal";
+            const string c_metodoNombre = "ConsultarProducto";
             using (var cliente = new HttpClient())
             {
                 try
@@ -87,10 +79,9 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     // ARMAR LA RUTA DEL SERVICIO A CONSUMIR.
                     segmentoCodigo = "BLOQUE 20";
                     string url = string.Empty;
-                    url = string.Format("{0}{1}?tipoNuc={2}&tipoCliente={3}&criterioEmpresa={4}&codBanco={5}&" +
-                        "idTransaccion={6}&permiso={7}&parServicio={8}",
-                        c_rutaAPI, c_metodoNombre, tipoNuc, tipoCliente, criterioEmpresa, codBanco,
-                        idTransaccion, permiso, parServicio);
+                    url = string.Format("{0}{1}?estado={2}&idTransaccion={3}&permiso={4}&" +
+                        "parServicio={5}",
+                        c_rutaAPI, c_metodoNombre, estado, idTransaccion, permiso, parServicio);
 
                     // EJECUTAR LA PETICION AL SERVICIO CAD DE CONSULTA DE ORDENES MEDIANTE
                     // METODO GET.
@@ -130,7 +121,7 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         }
 
         /// <summary>
-        /// CONSULTAR USUARIO
+        /// CONSULTAR PRODUCTOS
         /// </summary>
         /// <param name="cabUsuario"> CODIGO DEL USUARIO </param>
         /// <param name="cabLoginId"> CODIGO DE LA SESION </param>
@@ -138,31 +129,30 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         /// <param name="cabBanco"> CODIGO DEL BANCO </param>
         /// <param name="cabTipoUsuario"> TIPO DE USUARIO QUE REALIZA LA PETICION </param>
         /// <param name="cabEstacion"> ESTACION DEL USUARIO </param>
-        /// <param name="tipoNuc"> CODIGO DE USUARIO </param>
-        /// <param name="tipoCliente"> CODIGO DE LA OPCION </param>
-        /// <param name="criterioEmpresa"> TIPO DE CLIENTE </param>
         /// <param name="codBanco"> CODIGO DEL BANCO </param>
+        /// <param name="codEmpresa"> CODIGO DE LA EMPRESA </param>
         /// <param name="idTransaccion"> ID DE LA TRANSACCION </param>
         /// <param name="permiso"> PERMISO DE EJECUCIÓN </param>
         /// <param name="parServicio"> SERVICIO PARA VERIFICAR PERMISO DE EJECUCIÓ </param>
         /// <returns></returns>
         [HttpGet]
-        [Route("ConsultaIndividual")]
-        public ActionResult ConsultaIndividual(
+        [Route("CargarProductosxEmpProdServicio")]
+        public ActionResult CargarProductosxEmpProdServicio(
             [FromHeader(Name = "cabUsuario")] string cabUsuario,
             [FromHeader(Name = "cabLoginId")] int cabLoginId,
             [FromHeader(Name = "cabCompania")] int cabCompania,
             [FromHeader(Name = "cabBanco")] int cabBanco,
             [FromHeader(Name = "cabTipoUsuario")] string cabTipoUsuario,
             [FromHeader(Name = "cabEstacion")] string cabEstacion,
-            [FromQuery(Name = "codEmpresa")] string codEmpresa,
+            [FromQuery(Name = "codBanco")] int codBanco,
+            [FromQuery(Name = "codEmpresa")] int codEmpresa,
             [FromQuery(Name = "idTransaccion")] string idTransaccion,
             [FromQuery(Name = "permiso")] string permiso,
             [FromQuery(Name = "parServicio")] string parServicio
         )
         {
 
-            const string c_metodoNombre = "ConsultaIndividual";
+            const string c_metodoNombre = "CargarProductosxEmpProdServicio";
             using (var cliente = new HttpClient())
             {
                 try
@@ -184,8 +174,9 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     // ARMAR LA RUTA DEL SERVICIO A CONSUMIR.
                     segmentoCodigo = "BLOQUE 20";
                     string url = string.Empty;
-                    url = string.Format("{0}{1}?codEmpresa={2}&idTransaccion={3}&permiso={4}&parServicio={5}",
-                        c_rutaAPI, c_metodoNombre, codEmpresa, idTransaccion, permiso, parServicio);
+                    url = string.Format("{0}{1}?codBanco={2}&codEmpresa={3}&idTransaccion={4}&permiso={5}&" +
+                        "parServicio={6}",
+                        c_rutaAPI, c_metodoNombre, codBanco, codEmpresa, idTransaccion, permiso, parServicio);
 
                     // EJECUTAR LA PETICION AL SERVICIO CAD DE CONSULTA DE ORDENES MEDIANTE
                     // METODO GET.
@@ -225,5 +216,4 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         }
 
     }
-
 }
