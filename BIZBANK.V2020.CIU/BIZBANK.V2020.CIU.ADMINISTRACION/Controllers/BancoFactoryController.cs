@@ -4,31 +4,32 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json.Linq;
+
+// For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ServicioController : ControllerBase
+    public class BancoFactoryController : ControllerBase
     {
 
         private readonly IConfiguration configuracion;
-        const string c_rutaAPI = "/api/Servicio/";
+        const string c_rutaAPI = "/api/BancoFactory/";
         private string segmentoCodigo = string.Empty;
         private readonly string c_rutaClase = "BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.ADMINISTRACION/Controllers/";
-        private readonly string c_claseNombre = "ServicioController";
+        private readonly string c_claseNombre = "BancoFactoryController";
 
-        public ServicioController(IConfiguration configuracion)
+        public BancoFactoryController(IConfiguration configuracion)
         {
             this.configuracion = configuracion;
         }
 
         /// <summary>
-        /// CONSULTAR SERVICIOS
+        /// CONSULTAR BANCO
         /// </summary>
         /// <param name="cabUsuario"> CODIGO DEL USUARIO </param>
         /// <param name="cabLoginId"> CODIGO DE LA SESION </param>
@@ -36,14 +37,13 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         /// <param name="cabBanco"> CODIGO DEL BANCO </param>
         /// <param name="cabTipoUsuario"> TIPO DE USUARIO QUE REALIZA LA PETICION </param>
         /// <param name="cabEstacion"> ESTACION DEL USUARIO </param>
-        /// <param name="codProducto"> CODIGO DEL PRODUCTO </param>
         /// <param name="idTransaccion"> ID DE LA TRANSACCION </param>
         /// <param name="permiso"> PERMISO DE EJECUCIÓN </param>
         /// <param name="parServicio"> SERVICIO PARA VERIFICAR PERMISO DE EJECUCIÓ </param>
         /// <returns></returns>
         [HttpGet]
-        [Route("ServicioPlantillaModulo")]
-        public ActionResult ServicioPlantillaModulo(
+        [Route("CargarBancosNoCRED")]
+        public ActionResult CargarBancosNoCRED(
             [FromHeader(Name = "cabUsuario")] string cabUsuario,
             [FromHeader(Name = "cabLoginId")] int cabLoginId,
             [FromHeader(Name = "cabCompania")] int cabCompania,
@@ -57,7 +57,8 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         )
         {
 
-            const string c_metodoNombre = "ServicioPlantillaModulo";
+            const string c_metodoNombre = "CargarBancosNoCRED";
+
             using (var cliente = new HttpClient())
             {
                 try
@@ -79,9 +80,8 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     // ARMAR LA RUTA DEL SERVICIO A CONSUMIR.
                     segmentoCodigo = "BLOQUE 20";
                     string url = string.Empty;
-                    url = string.Format("{0}{1}?codProducto={2}&idTransaccion={3}&permiso={4}" +
-                        "&parServicio={5}",
-                        c_rutaAPI, c_metodoNombre, codProducto, idTransaccion, permiso, parServicio);
+                    url = string.Format("{0}{1}?idTransaccion={2}&permiso={3}&parServicio={4}",
+                        c_rutaAPI, c_metodoNombre, idTransaccion, permiso, parServicio);
 
 
                     // EJECUTAR LA PETICION AL SERVICIO CAD DE CONSULTA DE ORDENES MEDIANTE
@@ -106,6 +106,8 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                 }
                 catch (Exception errorInformacion)
                 {
+
+                    // RETORNAR UN OBJETO DE ERROR CON EL CODIGO HTTP 400 EN CASO DE ERROR 
                     var jsonError = new
                     {
                         error = true,
@@ -113,6 +115,7 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
                     };
 
                     return BadRequest(jsonError);
+
                 }
             }
 

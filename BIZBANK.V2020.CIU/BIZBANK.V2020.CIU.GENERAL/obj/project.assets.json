@@ -6243,11 +6243,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.GENERAL/BIZBANK.V2020.CIU.GENERAL.csproj",
+      "projectUniqueName": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.GENERAL/BIZBANK.V2020.CIU.GENERAL.csproj",
       "projectName": "BIZBANK.V2020.CIU.GENERAL",
-      "projectPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.GENERAL/BIZBANK.V2020.CIU.GENERAL.csproj",
+      "projectPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.GENERAL/BIZBANK.V2020.CIU.GENERAL.csproj",
       "packagesPath": "/Users/geodmina/.nuget/packages/",
-      "outputPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.GENERAL/obj/",
+      "outputPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CIU/BIZBANK.V2020.CIU.GENERAL/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

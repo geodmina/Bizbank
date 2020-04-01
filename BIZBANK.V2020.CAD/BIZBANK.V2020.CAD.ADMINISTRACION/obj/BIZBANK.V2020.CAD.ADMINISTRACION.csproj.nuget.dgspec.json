@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj": {}
+    "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj": {}
   },
   "projects": {
-    "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj": {
+    "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj",
+        "projectUniqueName": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj",
         "projectName": "BIZBANK.V2020.CAD.ADMINISTRACION",
-        "projectPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj",
+        "projectPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/BIZBANK.V2020.CAD.ADMINISTRACION.csproj",
         "packagesPath": "/Users/geodmina/.nuget/packages/",
-        "outputPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/C#/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/obj/",
+        "outputPath": "/Users/geodmina/Personal/Sisoemp/Codigo Fuente/Bizbank/BIZBANK.V2020.CAD/BIZBANK.V2020.CAD.ADMINISTRACION/obj/",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

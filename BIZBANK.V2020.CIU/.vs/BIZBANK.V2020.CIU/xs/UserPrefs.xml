@@ -7,7 +7,7 @@
           <Node name="BIZBANK.V2020.CIU" expanded="True">
             <Node name="BIZBANK.V2020.CIU.ADMINISTRACION" expanded="True">
               <Node name="Controllers" expanded="True">
-                <Node name="ServicioController.cs" selected="True" />
+                <Node name="UsuarioBancoFactoryController.cs" selected="True" />
               </Node>
             </Node>
           </Node>
