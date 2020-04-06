@@ -380,34 +380,42 @@ namespace BIZBANK.V2020.CAD.GENERAL.Controllers
         [HttpGet]
         [Route("GetEmpresaBIZ")]
         public ActionResult GetEmpresaBIZ(
-            [FromQuery(Name = "codUsuario")] string codUsuario,
-            [FromQuery(Name = "tipoUsuario")] string tipoUsuario,
-            [FromQuery(Name = "codBanco")] int codBanco,
-            [FromQuery(Name = "codEmpresa")] int codEmpresa,
-            [FromQuery(Name = "codServicio")] string codServicio,
-            [FromQuery(Name = "estacion")] string estacion,
+            [FromHeader(Name = "cabUsuario")] string cabUsuario,
+            [FromHeader(Name = "cabLoginId")] int cabLoginId,
+            [FromHeader(Name = "cabCompania")] int cabCompania,
+            [FromHeader(Name = "cabBanco")] int cabBanco,
+            [FromHeader(Name = "cabTipoUsuario")] string cabTipoUsuario,
+            [FromHeader(Name = "cabEstacion")] string cabEstacion,
+            [FromQuery(Name = "idTransaccion")] string idTransaccion,
             [FromQuery(Name = "permiso")] string permiso,
-            [FromQuery(Name = "logId")] int logId
+            [FromQuery(Name = "parServicio")] string parServicio
         )
         {
 
             try
             {
 
+                // INSTANCIAR DEL CLIENTE PARA LA EJECUCIÓN DE LOS SP
                 ClienteDBMS dbms = new ClienteDBMS();
 
-                dbms.cabeceraDBMS.LoginId = logId;
-                dbms.cabeceraDBMS.BankId = codBanco;
-                dbms.cabeceraDBMS.CompanyId = codEmpresa;
+                // ASIGNAR VALORES DE CABECERA DEL CLIENTE
+                dbms.cabeceraDBMS.LoginId = cabLoginId;
+                dbms.cabeceraDBMS.BankId = cabBanco;
+                dbms.cabeceraDBMS.CompanyId = cabCompania;
                 dbms.cabeceraDBMS.SessionId = 0;
-                dbms.cabeceraDBMS.StationId = estacion;
-                dbms.cabeceraDBMS.UserId = codUsuario;
-                dbms.cabeceraDBMS.UserType = tipoUsuario;
+                dbms.cabeceraDBMS.StationId = cabEstacion;
+                dbms.cabeceraDBMS.UserId = cabUsuario;
+                dbms.cabeceraDBMS.UserType = cabTipoUsuario;
 
+
+                // AGREGAR PARAMETROS PARA EJECUCION DEL SP
                 dbms.AddParameter("t_retorno", DBType.dbCursor, ParamDirection.ParamOutput, 0, string.Empty);
 
-                if (!dbms.Execute(permiso.ToString(), permiso, codServicio, "pr_con_empresa_Biz", "BZA_PQ_BIZ_EMPRESA", ExecuteType.ResultSet, ExecuteMode.LocalMode, 0))
+                // LLAMAR AL METODO QUE EJECUTA EL SP
+                if (!dbms.Execute(idTransaccion, permiso, parServicio, "pr_con_empresa_Biz", "BZA_PQ_BIZ_EMPRESA", ExecuteType.ResultSet, ExecuteMode.LocalMode, 0))
                 {
+
+                    // RETORNAR OBJETO DE ERROR CON UN CODIGO HTTP 400 EN CASO DE ERRORES EN LA EJECUCION
                     var jsonError = new
                     {
                         error = true,
@@ -418,6 +426,7 @@ namespace BIZBANK.V2020.CAD.GENERAL.Controllers
                     return BadRequest(jsonError);
                 }
 
+                // RETORNAR RESPUESTA CON CODIGO HTTP 200
                 JArray empresas = dbms.GetData();
 
                 var jsonRetorno = new
@@ -433,6 +442,7 @@ namespace BIZBANK.V2020.CAD.GENERAL.Controllers
             catch (Exception ex)
             {
 
+                // RETORNAR OBJETO DE ERROR CON UN CODIGO HTTP 400 EN CASO DE ERRORES EN LA EJECUCION
                 var jsonError = new
                 {
                     error = true,
@@ -440,6 +450,7 @@ namespace BIZBANK.V2020.CAD.GENERAL.Controllers
                     mensaje = ex.Message
                 };
                 return BadRequest(jsonError);
+
             }
 
         }

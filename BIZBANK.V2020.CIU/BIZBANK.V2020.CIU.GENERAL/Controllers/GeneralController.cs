@@ -350,14 +350,15 @@ namespace BIZBANK.V2020.CIU.GENERAL.Controllers
         [HttpGet]
         [Route("GetEmpresaBIZ")]
         public ActionResult GetEmpresaBIZ(
-            [FromQuery(Name = "codUsuario")] string codUsuario,
-            [FromQuery(Name = "tipoUsuario")] string tipoUsuario,
-            [FromQuery(Name = "codBanco")] int codBanco,
-            [FromQuery(Name = "codEmpresa")] int codEmpresa,
-            [FromQuery(Name = "codServicio")] string codServicio,
-            [FromQuery(Name = "estacion")] string estacion,
+            [FromHeader(Name = "cabUsuario")] string cabUsuario,
+            [FromHeader(Name = "cabLoginId")] int cabLoginId,
+            [FromHeader(Name = "cabCompania")] int cabCompania,
+            [FromHeader(Name = "cabBanco")] int cabBanco,
+            [FromHeader(Name = "cabTipoUsuario")] string cabTipoUsuario,
+            [FromHeader(Name = "cabEstacion")] string cabEstacion,
+            [FromQuery(Name = "idTransaccion")] string idTransaccion,
             [FromQuery(Name = "permiso")] string permiso,
-            [FromQuery(Name = "logId")] int logId
+            [FromQuery(Name = "parServicio")] string parServicio
         )
         {
 
@@ -367,6 +368,14 @@ namespace BIZBANK.V2020.CIU.GENERAL.Controllers
                 try
                 {
 
+                    // ASIGNAR CABECERAS AL OBJETO CLIENTE
+                    cliente.DefaultRequestHeaders.Add("cabUsuario", cabUsuario);
+                    cliente.DefaultRequestHeaders.Add("cabLoginId", cabLoginId.ToString());
+                    cliente.DefaultRequestHeaders.Add("cabCompania", cabCompania.ToString());
+                    cliente.DefaultRequestHeaders.Add("cabBanco", cabBanco.ToString());
+                    cliente.DefaultRequestHeaders.Add("cabTipoUsuario", cabTipoUsuario);
+                    cliente.DefaultRequestHeaders.Add("cabEstacion", cabEstacion);
+
                     // OBTENER LA BASE DEL URL DESDE EL ARCHIVO DE CONFIGURACION appsettings.json.
                     segmentoCodigo = "BLOQUE 10";
                     cliente.BaseAddress = new Uri(configuracion["Servicio:Url"]);
@@ -375,11 +384,8 @@ namespace BIZBANK.V2020.CIU.GENERAL.Controllers
                     // ARMAR LA RUTA DEL SERVICIO A CONSUMIR.
                     segmentoCodigo = "BLOQUE 20";
                     string url = string.Empty;
-                    url = string.Format("{0}{1}?codUsuario={2}&tipoUsuario={3}&codBanco={4}" +
-                        "&codEmpresa={5}&codServicio={6}&estacion={7}&permiso={8}" +
-                        "&logId={9}",
-                        c_rutaAPI, c_metodoNombre, codUsuario, tipoUsuario, codBanco,
-                        codEmpresa, codServicio, estacion, permiso, logId);
+                    url = string.Format("{0}{1}?idTransaccion={2}&permiso={3}&parServicio={4}",
+                        c_rutaAPI, c_metodoNombre, idTransaccion, permiso, parServicio);
 
                     // EJECUTAR LA PETICION AL SERVICIO CAD DE CONSULTA DE ORDENES MEDIANTE
                     // METODO GET.
