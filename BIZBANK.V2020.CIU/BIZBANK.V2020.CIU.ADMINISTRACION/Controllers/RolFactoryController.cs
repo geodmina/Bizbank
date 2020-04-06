@@ -153,7 +153,7 @@ namespace BIZBANK.V2020.CIU.ADMINISTRACION.Controllers
         )
         {
 
-            const string c_metodoNombre = "ConsultaServiciosEmpresaProducto";
+            const string c_metodoNombre = "CargarRolesTodos";
             using (var cliente = new HttpClient())
             {
                 try
